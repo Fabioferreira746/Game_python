@@ -1,22 +1,29 @@
 import random
+VERDE = "\033[32m"
+VERMELHO = "\033[31m"
+AMARELO = "\033[33m"
+AZUL = "\033[34m"
+RESET = "\033[0m"  
 
 numero_secreto = random.randint(1, 10)
 acertou = False
 
+print(f"{AZUL}=== JOGO DO NÚMERO SECRETO ==={RESET}")
+
 while not acertou:
     try:
-        tentativa = int(input("Digite um número de 1 a 10: "))
+        tentativa = int(input(f"{AZUL}Digite um número de 1 a 10: {RESET}"))
 
         if tentativa < 1 or tentativa > 10:
-            print("Digite um número inteiro de 1 a 10.")
+            print(f"{AMARELO}Digite um número inteiro de 1 a 10.{RESET}")
             continue
 
         if tentativa == numero_secreto:
-            print("Acertou!")
+            print(f"{VERDE}Parabéns! Você acertou!{RESET}")
             acertou = True
         elif tentativa < numero_secreto:
-            print("Seu chute foi menor")
+            print(f"{VERMELHO}Seu chute foi menor.{RESET}")
         else:
-            print("Seu chute foi maior")
+            print(f"{VERMELHO}Seu chute foi maior.{RESET}")
     except ValueError:
-        print("Digite apenas números inteiros!")
+        print(f"{AMARELO}Erro: Digite apenas números inteiros!{RESET}")
