@@ -27,3 +27,5 @@ while not acertou:
             print(f"{VERMELHO}Seu chute foi maior.{RESET}")
     except ValueError:
         print(f"{AMARELO}Erro: Digite apenas números inteiros!{RESET}")
+
+        #teste
